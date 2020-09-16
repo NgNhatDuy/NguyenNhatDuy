@@ -146,7 +146,10 @@ nav {
         position: absolute;
         padding: 0;
         flex-direction: column;
+<<<<<<< HEAD
     
+=======
+>>>>>>> a688462b64eb41f870ce5ec9154d1f5e92acc869
         width: 100%;
         height: 100vh;
         background-color:  #999;
