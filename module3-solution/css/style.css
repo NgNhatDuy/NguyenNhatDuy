@@ -1,0 +1,360 @@
+    /* Global */
+*, *::before, *::after{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 17px;
+}
+
+h1 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(0, 0, 238);
+}
+
+    /* Custom */
+header h1 {
+    text-align: center;
+}
+
+#chicken, #beef, #sushi {
+    margin: 10px;
+    padding: 0;
+    border: 2px solid black;
+    position: relative;
+    background-color: #989898;
+}
+
+#chicken h3, 
+#sushi h3, 
+#beef h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#chicken > p,
+#beef > p,
+#sushi > p {
+    margin: 0;
+    padding: 10px 20px 10px 10px;
+}
+
+
+/* Navigation bar */
+.container > h2 {
+    text-align:  center;
+    margin: 30px 0 15px;
+}
+
+nav {
+    background-color: #999;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.navbar-brand, .navbar-brand:visited {
+    text-align: center;
+    font-size: 25px;
+    line-height: 40px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    display: none;
+}
+
+.navbar-nav li {
+    list-style: none;
+}
+
+.navbar-nav li a {
+    color: black;
+}
+
+    /* Simple Responsive */
+.container, .container-fluid {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-top: 0;
+}
+
+/* *** Extra small devices only *** */
+@media (max-width: 768px) {
+    /* Custom the navbar on extra small device */
+    .burger {
+        float: right;
+        border: 2px solid black;
+        border-radius: 3px;
+        z-index: 4;
+        transition: all 0.4s ease 0.1s;
+    }
+    .line {
+        width: 30px;
+        height: 5px;
+        background-color: black;
+        border-radius: 2px;
+        margin: 5px;
+        transition: all 0.4s ease 0.1s;
+    }
+    .burger.active {
+        border: 2px solid #dcdcdc;
+    }
+    .burger.active .line {
+        background-color: #dcdcdc;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        padding: 0;
+        flex-direction: column;
+        top:7.5%;
+        width: 100%;
+        height: 100vh;
+        background-color:  #999;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 3;
+        left: 0;
+        clip-path: circle(10px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -10%);
+        transition: all 0.7s ease-out;
+        opacity: 0.95;
+        pointer-events: none;
+    }
+
+    .navbar-nav.open {
+        display: flex;
+        clip-path: circle(1180px at 90% -10%);
+        -webkit-clip-path: circle(1180px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .navbar-nav li {
+        opacity: 0;
+    }
+
+    .navbar-nav li a {
+        font-size: 30px;
+    }
+
+    .navbar-nav li:nth-child(1) {
+        transition: all 0.4s ease-out 0.2s;
+    }
+
+    .navbar-nav li:nth-child(2) {
+        transition: all 0.4s ease-out 0.4s;
+    }
+
+    .navbar-nav li:nth-child(3) {
+        transition: all 0.4s ease-out 0.6s;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+
+    .fade:hover a {
+        text-decoration: underline;
+    }
+
+    .col-xs-1 {
+        flex: 0 0 auto;
+        width: 8.333333%;
+    }
+    .col-xs-xs-2 {
+        flex: 0 0 auto;
+        width: 16.666667%;
+    }
+    .col-xs-xs-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .col-xs-xs-4 {
+        flex: 0 0 auto;
+        width: 33.333333%;
+    }
+    .col-xs-xs-5 {
+        flex: 0 0 auto;
+        width: 41.66666
+    }
+    .col-xs-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .col-xs-7 {
+        flex: 0 0 auto;
+        width: 58.333333%;
+    }
+    .col-xs-8 {
+        flex: 0 0 auto;
+        width: 66.666667%;
+    }
+    .col-xs-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .col-xs-10 {
+        flex: 0 0 auto;
+        width: 83.333333%;
+    }
+    .col-xs-11 {
+        flex: 0 0 auto;
+        width: 91.666667%;
+    }
+    .col-xs-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+/* *** Small devices only *** */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720;
+    }
+
+    .col-sm-1 {
+        flex: 0 0 auto;
+        width: 8.333333%;
+    }
+    .col-sm-2 {
+        flex: 0 0 auto;
+        width: 16.666667%;
+    }
+    .col-sm-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .col-sm-4 {
+        flex: 0 0 auto;
+        width: 33.333333%;
+    }
+    .col-sm-5 {
+        flex: 0 0 auto;
+        width: 41.666667%;
+    }
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .col-sm-7 {
+        flex: 0 0 auto;
+        width: 58.333333%;
+    }
+    .col-sm-8 {
+        flex: 0 0 auto;
+        width: 66.666667%;
+    }
+    .col-sm-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .col-sm-10 {
+        flex: 0 0 auto;
+        width: 83.333333%;
+    }
+    .col-sm-11 {
+        flex: 0 0 auto;
+        width: 91.666667%;
+    }
+    .col-sm-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+/* *** Medium devices only *** */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .col-md-1 {
+        flex: 0 0 auto;
+        width: 8.333333%;
+    }
+    .col-md-2 {
+        flex: 0 0 auto;
+        width: 16.666667%;
+    }
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.333333%;
+    }
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 41.666667%;
+    }
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .col-md-7 {
+        flex: 0 0 auto;
+        width: 58.333333%;
+    }
+    .col-md-8 {
+        flex: 0 0 auto;
+        width: 66.666667%;
+    }
+    .col-md-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .col-md-10 {
+        flex: 0 0 auto;
+        width: 83.333333%;
+    }
+    .col-md-11 {
+        flex: 0 0 auto;
+        width: 91.666667%;
+    }
+    .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
